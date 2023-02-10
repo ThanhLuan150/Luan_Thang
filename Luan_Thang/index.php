@@ -13,18 +13,15 @@
              $loaiphong= $_POST["loaiphong"];
              $tienan = $_POST["tienan"];
              $giacla=$_POST["giatla"];
-             $giacla=$_POST["ansang"];
-             $giacla=$_POST["tamhoi"];
+             $ansang=$_POST["ansang"];
+             $tamhoi=$_POST["tamhoi"];
              $checkin=strtotime( $_POST["checkin"]);
              $checkout=strtotime($_POST["checkout"]); 
              $date = abs($checkout- $checkin)  ;
              $ngaytra = floor($date / (60*60*24)) * $loaiphong;
              $giacla_ansang_tamhoi = $giatla + $ansang + $tamhoi ;
-             $tong = $loaiphong +$ngaytra +$giacla_ansang_tamhoi + $tienan ;
-             
-
-             
-        ?>
+             $tong = $loaiphong +$ngaytra + $giacla_ansang_tamhoi + $tienan;
+             ?>
     <form id="forml" name="forml" method="post" action="index.php">
         <div class="tinhtien" >
             <h1 class="tinhtienh1">TÍNH TIỀN</h1>
@@ -48,26 +45,28 @@
                 <input class="input" type="text" name="tienan" value=""placeholder="Vui lòng nhập">
             <br> <br>
                 Dịch vu:
-                    <input type="radio" name="dichvu" value="1"> Giặc là
+                    <input type="radio" name="giatla" value="1"> Giặc là
                 <br> <br>
-                    <input type="radio" name="dichvu" value="2"> Ăn sáng
+                    <input type="radio" name="ansang" value="2"> Ăn sáng
                 <br> <br>
-                    <input type="radio" name="dichvu" value="3"> Tắm hơi
+                    <input type="radio" name="tamhoi" value="3"> Tắm hơi
             <br> <br>
             <button type="submit" class="bt1" >OK</button>
             <button type="cancle" class="bt1">Cancle</button>
         </div>
-    </form>
+    </form  >
     
-        <form id="forml" action='' method='post'>
+        <form id="forml">
+            
+      
             Bill
             TypeRoom:<?php echo $loaiphong ?> <br> <br>
             Rental hours:<?php echo $ngaytra?> <br> <br>
             Money for meals: <?php echo $tienan ?> <br> <br>
             Money for service: <?php echo $giacla_ansang_tamhoi ?> <br> <br>
-            Total: <?php echo  $tong?> <br> <br>
+            Total: <?php echo $tong?> <br> <br>
+        
         </form>
-   
     
 </body>
 </html>
