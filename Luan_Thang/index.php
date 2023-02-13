@@ -21,7 +21,7 @@
              $ngaytra = floor($date / (60*60*24)) * $loaiphong;
              $giacla_ansang_tamhoi = $giatla + $ansang + $tamhoi ;
              $tong = $loaiphong +$ngaytra + $giacla_ansang_tamhoi + $tienan;
-             ?>
+?>
     <form id="forml" name="forml" method="post" action="index.php">
         <div class="tinhtien" >
             <h1 class="tinhtienh1">TÍNH TIỀN</h1>
